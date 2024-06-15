@@ -4,7 +4,11 @@ import { UserComponent } from './user.component';
 
 const routes: Routes = [
   { path: '', component: UserComponent },
-  { path: 'register', component: UserComponent}
+  { path: 'details', component: UserComponent},
+  { path: 'register', component: UserComponent},
+  { path: 'edit', component: UserComponent},
+  { path: 'login', component: UserComponent},
+  { path: 'delete', component: UserComponent}
 ];
 
 @NgModule({

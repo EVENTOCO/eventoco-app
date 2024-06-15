@@ -1,4 +1,4 @@
-.register-user {
+.login-user {
   border: 1px solid #ccc;
   padding: 16px;
   border-radius: 8px;
@@ -6,7 +6,7 @@
   margin: auto;
 }
 
-.register-user h2 {
+.login-user h2 {
   text-align: center;
   margin-bottom: 24px;
 }

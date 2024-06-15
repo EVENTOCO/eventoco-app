@@ -1,0 +1,8 @@
+<div class="user-details" *ngIf="user">
+  <h2>Datos del Usuario</h2>
+  <p><strong>ID:</strong> {{ user.id }}</p>
+  <p><strong>Nombre de Usuario:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+  <p><strong>Cumpleaños:</strong> {{ user.birthday | date:'mediumDate' }}</p>
+</div>

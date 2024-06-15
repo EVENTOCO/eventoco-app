@@ -1,0 +1,71 @@
+.button-container {
+  margin-top: 20px;
+}
+
+.button-container > button {
+  margin-right: 10px; /* Espacio entre los botones */
+}
+
+.user-details-container {
+  margin-top: 20px;
+}
+
+.user-action-container {
+  margin-top: 20px;
+}
+
+/* Estilos específicos para los botones */
+.btn-primary {
+  color: #D35400; /* Color de botones */
+  background-color: transparent;
+  padding: 8px 18px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #d56520;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #ebc7cb;
+  color: #d35400;;
+}
+
+.btn-danger {
+  background-color: #D35400; /* Color de botones */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #ffffff;
+  color: #D35400;
+  padding: 8px 18px;
+  border: 2px solid #d56520;
+}
+
+.btn-edit {
+  background-color: #df7a37; /* Color de botones */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background-color: #ffffff;
+  color: #df7a37;
+  padding: 8px 18px;
+  border: 2px solid #df7a37;
+}
