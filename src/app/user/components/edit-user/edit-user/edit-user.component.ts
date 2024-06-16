@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { UserResponse } from './../../../model/user-response.model';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../../../services/user.service';
