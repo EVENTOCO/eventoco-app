@@ -29,7 +29,7 @@ export class EditUserComponent {
 
       this.userService.updateUser(this.user.id, updatedUser).subscribe(() => {
         console.log('Datos actualizados correctamente.');
-        window.location.reload(); // Recargar la página actual
+        window.location.reload();
       }, error => {
         console.error('Error al editar datos del usuario', error);
       });
