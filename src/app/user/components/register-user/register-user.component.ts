@@ -30,7 +30,7 @@ export class RegisterUserComponent {
       const newUser = this.userForm.value;
       this.userService.createUser(newUser).subscribe(() => {
         console.log('Registro completado');
-        window.location.reload(); // Recargar la página actual
+        this.isFormVisible = false; // Hide form after successful registration
       }, error => {
         console.error('Error al registrar usuario', error);
       });
