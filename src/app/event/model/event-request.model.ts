@@ -1,7 +1,6 @@
 import { LoginUserComponent } from "../../user/components/login-user/login-user/login-user.component";
 
-export interface EventResponse{
-    id:number,
+export interface EventRequest{
     title: string,
     date: Date,
     place: string,
