@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ComentComponent {
   description: string = '';
-
+//variable
   coment: Comment = {
     description: this.description,
     created_at: new Date(),
@@ -18,7 +18,7 @@ export class ComentComponent {
 
   saveComment() {
     this.coment.description = this.description;
-    fetch('http://localhost:8091/api/v1/coments', {
+    fetch('http://localhost:8080/api/v1/coments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
