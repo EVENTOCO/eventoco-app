@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ComentComponent {
   description: string = '';
+  // userId: string = localStorage.getItem('userId');
 //variable
   coment: Comment = {
     description: this.description,
@@ -18,6 +19,7 @@ export class ComentComponent {
 
   saveComment() {
     this.coment.description = this.description;
+    // solicitud
     fetch('http://localhost:8080/api/v1/coments', {
       method: 'POST',
       headers: {
@@ -25,7 +27,7 @@ export class ComentComponent {
       },
       body: JSON.stringify(this.coment)
     }).then(response => {
-      console.log(response.body);
+      console.log(response.status);
     })
   }
 }
