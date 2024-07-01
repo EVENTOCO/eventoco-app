@@ -1,12 +1,17 @@
 <div>
-  <button (click)="toggleLoginForm()" class="btn btn-primary">
-    {{ isLoginVisible ? 'Calcelar inicio de sesión' : 'Iniciar Sesión' }}
-  </button>
-  <app-login-user *ngIf="isLoginVisible"></app-login-user>
-  <button (click)="toggleRegisterForm()" class="btn btn-danger">
-    {{ isRegisterVisible ? 'Calcelar registro' : 'Registrarse' }}
-  </button>
-  <app-register-user *ngIf="isRegisterVisible"></app-register-user>
+  <div *ngIf="!isLoggedIn()">
+    <button (click)="toggleLoginForm()" class="btn btn-primary">
+      {{ isLoginVisible ? 'Calcelar inicio de sesión' : 'Iniciar Sesión' }}
+    </button>
+    <app-login-user *ngIf="isLoginVisible"></app-login-user>
+    <button (click)="toggleRegisterForm()" class="btn btn-danger">
+      {{ isRegisterVisible ? 'Calcelar registro' : 'Registrarse' }}
+    </button>
+    <app-register-user *ngIf="isRegisterVisible"></app-register-user>
+  </div>
+  <div *ngIf="isLoggedIn()">
+    <app-logout-user [user]="user"></app-logout-user>
+  </div>
   <p></p>
 </div>
 <div>
