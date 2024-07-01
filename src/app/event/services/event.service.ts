@@ -11,6 +11,7 @@ import { EventRequest } from '../model/event-request.model';
 export class EventService {
 
   private baseUrl = enviroment.baseUrl;
+  
   constructor(private http:HttpClient) { }
 
   getAllEvents():Observable<EventResponse[]>{
@@ -30,7 +31,7 @@ export class EventService {
     return this.http.get<EventResponse>(`${this.baseUrl}/events/date/${date}`);
   }
 
-  createUser(eventDTO: EventRequest): Observable<EventResponse> {
+  createEvent(eventDTO: EventRequest): Observable<EventResponse> {
     return this.http.post<EventResponse>(`${this.baseUrl}/events`, eventDTO);
   }
 
