@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -28,11 +28,14 @@ export class RegisterUserComponent {
   onSubmit(): void {
     if (this.userForm.valid) {
       const newUser = this.userForm.value;
-      this.userService.createUser(newUser).subscribe(() => {
-        console.log('Registro completado');
-        this.isFormVisible = false; // Hide form after successful registration
-      }, error => {
-        console.error('Error al registrar usuario', error);
+      this.userService.createUser(newUser).subscribe({
+        next: () => {
+          console.log('Registro completado');
+          this.isFormVisible = false;
+        },
+        error: (error: any) => {
+          console.error('Error al registrar usuario', error);
+        }
       });
     }
   }

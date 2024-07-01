@@ -25,12 +25,15 @@ export class LoginUserComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.userService.loginUser(email, password).subscribe(response => {
-        console.log('Sesión iniciada correctamente.', response);
-        localStorage.setItem('userId', response.id.toString());
-        window.location.reload(); // Recargar la página actual
-      }, error => {
-        console.error('Los datos son incorrectos o el usuario no existe', error);
+      this.userService.loginUser(email, password).subscribe({
+        next: (response) => {
+          console.log('Sesión iniciada correctamente.', response);
+          localStorage.setItem('userId', response.id.toString());
+          window.location.reload(); // Recargar la página actual
+        },
+        error: (error) => {
+          console.error('Los datos son incorrectos o el usuario no existe', error);
+        }
       });
     }
   }

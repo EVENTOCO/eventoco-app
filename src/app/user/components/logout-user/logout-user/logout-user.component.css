@@ -1,0 +1,16 @@
+.btn-primary {
+  color: #D35400; /* Color de botones */
+  background-color: transparent;
+  padding: 8px 18px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #d56520;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #ebc7cb;
+  color: #d35400;;
+}

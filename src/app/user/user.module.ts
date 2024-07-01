@@ -11,6 +11,7 @@ import { MaterialModule } from './../material/material.module';
 import { DeleteUserComponent } from './components/delete-user/delete-user/delete-user.component';
 import { LoginUserComponent } from './components/login-user/login-user/login-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoutUserComponent } from './components/logout-user/logout-user/logout-user.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserDetailsComponent,
     EditUserComponent,
     DeleteUserComponent,
-    LoginUserComponent
+    LoginUserComponent,
+    LogoutUserComponent
   ],
   imports: [
      CommonModule,

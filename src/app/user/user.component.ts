@@ -37,6 +37,10 @@ export class UserComponent {
     this.isLoginVisible = !this.isLoginVisible;
   }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('userId');
+  }
+
   onUserDeleted(userId: number): void {
     this.user = null!;
     this.userService.deleteUser(userId).subscribe(() => {
