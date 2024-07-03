@@ -8,7 +8,12 @@
     <li><a href="#">Nosotros</a></li>
   </ul>
   <div class="auth-buttons">
-    <button class="btn-register">Registrarme</button>
-    <button class="btn-login">Iniciar sesión</button>
+    <div *ngIf="!isLoggedIn()">
+      <button (click)="toRegister()" class="btn-register">Registrarme</button>
+      <button (click)="toLogin()" class="btn-login">Iniciar sesión</button>
+    </div>
+    <div *ngIf="isLoggedIn()">
+      <button (click)="logout()" class="btn-login"> Cerrar Sesión</button>
+    </div>
   </div>
 </nav>
