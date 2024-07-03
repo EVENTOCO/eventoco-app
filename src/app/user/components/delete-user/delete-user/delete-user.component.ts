@@ -19,6 +19,7 @@ export class DeleteUserComponent {
       this.userService.deleteUser(this.user.id).subscribe({
         next: () => {
           this.userDeleted.emit(this.user.id);
+          localStorage.removeItem('userId');
           window.location.reload(); // Recargar la página actual
         },
         error: (error) => {
