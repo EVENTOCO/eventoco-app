@@ -1,1 +1,12 @@
-<p>event works!</p>
+<div>
+  <button (click)="toggleCreateEventForm()" class="btn btn-primary">
+    {{ isCreateEventVisible ? 'Cancelar creación de evento' : 'Crear Evento' }}
+  </button>
+  <app-create-event *ngIf="isCreateEventVisible"></app-create-event>
+</div>
+
+
+ <div>
+    <app-delete-event (eventDeleted)="onEventDeleted($event)"></app-delete-event>
+  </div>
+  

@@ -1,2 +1,26 @@
-<p>user works!</p>
-<button routerLink="/user/register"> Registrar Usuario</button>
+<div>
+  <div *ngIf="!isLoggedIn()">
+    <button (click)="toggleLoginForm()" class="btn btn-primary">
+      {{ isLoginVisible ? 'Calcelar inicio de sesión' : 'Iniciar Sesión' }}
+    </button>
+    <app-login-user *ngIf="isLoginVisible"></app-login-user>
+    <button (click)="toggleRegisterForm()" class="btn btn-danger">
+      {{ isRegisterVisible ? 'Calcelar registro' : 'Registrarse' }}
+    </button>
+    <app-register-user *ngIf="isRegisterVisible"></app-register-user>
+  </div>
+  <div *ngIf="isLoggedIn()">
+    <app-logout-user [user]="user"></app-logout-user>
+  </div>
+  <p></p>
+</div>
+<div>
+  <app-user-details [user]="user"></app-user-details>
+</div>
+<div>
+  <button (click)="toggleEditForm()" class="btn btn-edit">
+    {{ isEditVisible ? 'Calcelar edición' : 'Editar' }}
+  </button>
+  <app-edit-user *ngIf="isEditVisible" [user]="user"></app-edit-user>
+  <app-delete-user [user]="user" (userDeleted)="onUserDeleted($event)"></app-delete-user>
+</div>
