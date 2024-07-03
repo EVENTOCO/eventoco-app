@@ -27,11 +27,14 @@ export class EditUserComponent {
         birthday: form.value.birthday
       };
 
-      this.userService.updateUser(this.user.id, updatedUser).subscribe(() => {
-        console.log('Datos actualizados correctamente.');
-        window.location.reload();
-      }, error => {
-        console.error('Error al editar datos del usuario', error);
+      this.userService.updateUser(this.user.id, updatedUser).subscribe({
+        next: () => {
+          console.log('Datos actualizados correctamente.');
+          window.location.reload(); // Recargar la página actual
+        },
+        error: (error) => {
+          console.error('Error al editar datos del usuario', error);
+        }
       });
     }
   }

@@ -16,9 +16,14 @@ export class DeleteUserComponent {
   confirmDelete(): void {
     const confirmation = confirm(`¿Seguro de que quieres borrar el usuario ${this.user.username}?`);
     if (confirmation) {
-      this.userService.deleteUser(this.user.id).subscribe(() => {
-        this.userDeleted.emit(this.user.id);
-        window.location.reload(); // Recargar la página actual
+      this.userService.deleteUser(this.user.id).subscribe({
+        next: () => {
+          this.userDeleted.emit(this.user.id);
+          window.location.reload(); // Recargar la página actual
+        },
+        error: (error) => {
+          console.error('Error al borrar usuario', error);
+        }
       });
     }
   }

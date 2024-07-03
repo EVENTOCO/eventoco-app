@@ -19,11 +19,14 @@ export class UserDetailsComponent implements OnInit {
   loadUser(): void {
     const userId = localStorage.getItem('userId');
     if (userId) {
-      this.userService.getUserById(+userId).subscribe(user => {
-        this.user = user;
-        console.log('Los datos del usuario han sido cargados correctamente:', this.user);
-      }, error => {
-        console.error('la sesión ha sido cerrada', error);
+      this.userService.getUserById(+userId).subscribe({
+        next: (user: UserResponse) => {
+          this.user = user;
+          console.log('Los datos del usuario han sido cargados correctamente:', this.user);
+        },
+        error: (error: any) => {
+          console.error('La sesión ha sido cerrada', error);
+        }
       });
     }
   }
