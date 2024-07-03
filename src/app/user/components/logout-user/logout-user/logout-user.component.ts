@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { UserResponse } from './../../../model/user-response.model';
+import { UserResponse } from '../../../model/user-response.model';
 
 @Component({
   selector: 'app-logout-user',

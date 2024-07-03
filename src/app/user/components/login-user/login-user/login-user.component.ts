@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../services/user.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login-user',
@@ -11,7 +12,7 @@ export class LoginUserComponent {
   loginForm: FormGroup;
   isFormVisible = false;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -29,7 +30,8 @@ export class LoginUserComponent {
         next: (response) => {
           console.log('Sesión iniciada correctamente.', response);
           localStorage.setItem('userId', response.id.toString());
-          window.location.reload(); // Recargar la página actual
+          // window.location.reload(); // Recargar la página actual
+          this.router.navigate(['']);
         },
         error: (error) => {
           console.error('Los datos son incorrectos o el usuario no existe', error);

@@ -1,5 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { UserResponse } from './../../../model/user-response.model';
+import { UserResponse } from '../../../model/user-response.model';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../../../services/user.service';
 import { UserRequest } from '../../../model/user-request.model';
