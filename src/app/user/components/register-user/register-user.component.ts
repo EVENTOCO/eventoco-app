@@ -32,6 +32,7 @@ export class RegisterUserComponent {
         next: () => {
           console.log('Registro completado');
           this.isFormVisible = false;
+          window.location.reload(); // Recargar la página actual
         },
         error: (error: any) => {
           console.error('Error al registrar usuario', error);
